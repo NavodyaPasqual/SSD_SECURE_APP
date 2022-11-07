@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import RestService from "../API/RestApi";
 import img from '../img/admin2.jpeg'
 
-
-
 function Login(props) {
    
     const [username, setUsername] = useState(""); 
