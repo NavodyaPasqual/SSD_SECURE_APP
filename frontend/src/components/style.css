@@ -2,7 +2,7 @@
     position:relative;
     width:100%;
     height: 250px;
-    color:#a18a96;
+    color:#f80583;
     background: url('../img/4.jpg')
     center no-repeat;
     background-size: cover;
@@ -16,7 +16,7 @@
     bottom: 0;
     width: 100%;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgb(242, 237, 89);
     border-top-left-radius:20px ;
     transform: translateY(70px);
     transition: transform .25s;
@@ -31,11 +31,11 @@
     height: 100px;
     transform: rotate(-175deg);
     border-radius: 50%;
-    box-shadow: inset 48px 48px #fff;
+    box-shadow: inset 48px 48px rgb(218, 27, 27);
 }
 
 .card_title{
-    color: #6A515E;
+    color: #de1b7f;
     line-height: 15px;
 }
 
