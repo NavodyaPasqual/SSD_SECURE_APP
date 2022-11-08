@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./src/Routes/userRoutes");
 const cors = require('cors');
+const fileRoute = require('./src/Routes/fileRoutes');
 const dotenv = require('dotenv');
 const app = express();
 const fs = require('fs');
@@ -14,7 +15,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 mongoose
   .connect(
     MONGODB_URI,
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
   )
   .then((_) => console.log("Connected to DB"))
   .catch((err) => console.error("error", err));
@@ -24,6 +25,7 @@ mongoose
 app.use(cors())
 app.use(express.json());
 app.use("/auth", userRoutes);
+app.use("/file", fileRoute);
 
 const sslServer = https.createServer(
   {

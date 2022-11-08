@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './User/components/login.component';
-import Chat from './Chat/chat';
+import React, { useEffect, useState } from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Login from './User/components/login.component'
+import Chat from './Chat/chat'
 import SignUp from './User/components/signup.component'
 import View from './User/components/view';
 import img from './User/img/ex11.png';
@@ -71,6 +71,11 @@ function App() {
                       </Link>
                     </li>
                     <li className="nav-item">
+                      <Link className="nav-link" to="/file">
+                        File Upload
+                      </Link>
+                    </li>
+                    <li className="nav-item">
                       <Link className="nav-link" onClick={logOutFunction}>
                         Log out
                         <img src={img2} style={{ height: "30px", width: "30px" }} />
@@ -90,6 +95,7 @@ function App() {
               <Route path="/sign-in" element={<Login hiddenState={hiddenState} />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/file" element={<File />} />
               <Route path="/home" element={<View />} />
             </Routes>
           </div>
