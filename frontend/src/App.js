@@ -4,6 +4,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './User/components/login.component'
 import Chat from './Chat/chat'
+import File from './File/components/file'
 import SignUp from './User/components/signup.component'
 import View from './User/components/view';
 import img from './User/img/ex11.png';
