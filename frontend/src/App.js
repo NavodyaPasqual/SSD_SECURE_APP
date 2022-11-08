@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Login from './User/components/login.component'
-import Chat from './Chat/chat'
+import React, { useEffect, useState } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Login from './User/components/login.component';
+import Chat from './Chat/chat';
 import SignUp from './User/components/signup.component'
 import View from './User/components/view';
-import img from './User/img/ex11.png'
-import img2 from './User/img/dmin_1.png'
-import img3 from './User/img/download.jpeg'
+import img from './User/img/ex11.png';
+import img2 from './User/img/dmin_1.png';
+import img3 from './User/img/download.jpeg';
 
 function App() {
 

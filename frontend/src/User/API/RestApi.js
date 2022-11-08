@@ -3,9 +3,6 @@ import axios from "axios";
 //Rest is using to handle api securely
 
 class RestService {
-
-
-
   // Login Function :-
 
   fetchSignUp(formData){
@@ -18,7 +15,7 @@ class RestService {
     };
 
     return  axios.post(
-      "http://localhost:8000/auth/login",
+      "https://localhost:8000/auth/login",
       formData,
       config
       ).then(res => {
@@ -27,8 +24,6 @@ class RestService {
       }
     );
   };
-
-
 
   // Adding users from me :-
 
@@ -41,7 +36,7 @@ class RestService {
     };
 
     return  axios.post(
-      "http://localhost:8000/auth/signup",
+      "https://localhost:8000/auth/signup",
       formData,
       config
       ).then(res => {
@@ -50,7 +45,6 @@ class RestService {
       }
     );
   }
-
 
   // Password Resetting :- 
   
@@ -68,7 +62,7 @@ class RestService {
     }
 
     return  axios.put(
-      `http://localhost:8000/auth/resetPassword/${formData.username}`,
+      `https://localhost:8000/auth/resetPassword/${formData.username}`,
       Data,
       config
       ).then(res => {
@@ -77,10 +71,6 @@ class RestService {
       }
     );
   }
-
-
-
-
 }
 
 export default new RestService();
