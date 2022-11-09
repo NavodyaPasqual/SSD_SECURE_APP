@@ -19,6 +19,7 @@ function Profile() {
     setHiddenField(true);
   }
 
+  //Check P3 :-
   //Cancel Reset (Call Below) :-
   const resetCancelFunction = () => {
     setPassword("");
@@ -26,6 +27,7 @@ function Profile() {
     setHiddenField(false);
   }
 
+  //Check P4 :-
   //Password Update Function :-
   const UpdateFunction = () => {
     const payload = {
@@ -74,6 +76,8 @@ function Profile() {
       }
     });
   }
+ 
+ 
   //Admin Detected :-
 
   if (data.role === 'admin') {
@@ -148,6 +152,7 @@ function Profile() {
     )
   }
 
+
   //Manager Detected and Handeling :-
   if (data.role === 'manager') {
     return (
@@ -168,6 +173,7 @@ function Profile() {
     )
   }
 
+  
   //Worker Detacted and handeling :-
 
   if (data.role === 'worker') {

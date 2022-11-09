@@ -17,15 +17,18 @@ export default function Login() {
     draggable: true,
     theme: "dark",
   };
+ 
   useEffect(() => {
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
       navigate("/");
     }
   }, []);
 
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
+
 
   const validateForm = () => {
     const { username, password } = values;
@@ -38,6 +41,7 @@ export default function Login() {
     }
     return true;
   };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -60,6 +64,7 @@ export default function Login() {
       }
     }
   };
+
 
   return (
     <>
@@ -88,6 +93,7 @@ export default function Login() {
     </>
   );
 }
+
 
 const FormContainer = styled.div`
   height: 100vh;

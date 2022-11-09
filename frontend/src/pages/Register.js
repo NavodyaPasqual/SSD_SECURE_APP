@@ -25,9 +25,13 @@ export default function Register() {
   });
 
 
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
+
+
+  //Check P1 :-
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email , role} = values;
@@ -42,6 +46,7 @@ export default function Register() {
         "Username should be greater than 3 characters.",
         toastOptions
       );
+
       return false;
     } else if (password.length < 8) {
       toast.error(
@@ -57,6 +62,9 @@ export default function Register() {
     return true;
   };
 
+
+  //submit Check P2 :-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
