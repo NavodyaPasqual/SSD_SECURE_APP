@@ -1,0 +1,80 @@
+.navbar {
+    font-family: "Nunito Sans";
+    font-size: 18px;
+}
+.navbar-custom {
+    background-color: #d3d2d2af;
+    shape-outside: revert;
+}
+
+.navbar-brand span{
+    background: -webkit-linear-gradient(#0000d8ad, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.navbar-brand a {
+    font-family: "Algerian";
+    font-size: 25px;
+    color: #942e2e39;
+    font-weight: bold;
+}
+
+.nav li{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: #989494;
+}
+
+.nav-link:hover{
+    color: black;
+
+}
+
+.a{
+    color: #989494;
+}
+
+.a:hover{
+    color: #000000;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.5)' stroke-width='1' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: black;
+}
+
+.button-submit{
+    border: none;
+    padding: 6px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.button2-submit {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0px;
+    border: 2px solid #000000;
+}
+
+.button2-submit:hover {
+    background-color: #777575;
+    color: #ffffff;
+    border: 2px solid #777575;
+    transform: scale(1.01);
+}

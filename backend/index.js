@@ -1,18 +1,44 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
+const authRoutes = require("./src/routes/auth");
+const messageRoutes = require("./src/routes/messages");
+const fileRoutes = require("./src/controllers/fileController")
+const app = express();
+
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
 const userRoutes = require("./src/Routes/userRoutes");
 const cors = require("cors");
 const path = require("path");
 const fileRoute = require("./src/Routes/fileRoutes");
 const dotenv = require("dotenv");
-const app = express();
-const fs = require("fs");
-const https = require("https");
+
 dotenv.config();
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const socket = require("socket.io");
+require("dotenv").config();
+
+app.use(cors());
+app.use(express.json());
 
 mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true 
+  })
+  .then(() => {
+    console.log("DB Connetion Successfull");
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
+app.use("/api/file", fileRoutes);
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -41,4 +67,28 @@ const sslServer = https.createServer(
   app
 );
 
-sslServer.listen(8000, () => console.log("Running on port 8000"));
+const server = sslServer.listen(process.env.PORT, () =>
+  console.log(`Server started on ${process.env.PORT}`)
+);
+
+const io = socket(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    credentials: true,
+  },
+});
+
+global.onlineUsers = new Map();
+io.on("connection", (socket) => {
+  global.chatSocket = socket;
+  socket.on("add-user", (userId) => {
+    onlineUsers.set(userId, socket.id);
+  });
+
+  socket.on("send-msg", (data) => {
+    const sendUserSocket = onlineUsers.get(data.to);
+    if (sendUserSocket) {
+      socket.to(sendUserSocket).emit("msg-recieve", data.msg);
+    }
+  });
+});
