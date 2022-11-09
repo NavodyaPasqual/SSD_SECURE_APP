@@ -63,10 +63,10 @@ const File = (props) => {
             }
           });
         } else {
-          setErrorMsg('Please select a file to add.');
+          setErrorMsg('Please select a file to upload.');
         }
       } else {
-        setErrorMsg('Please enter all the field values.');
+        setErrorMsg('Please fill all the fields.');
       }
     } catch (error) {
       error.response && setErrorMsg(error.response.data);
