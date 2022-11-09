@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./src/Routes/userRoutes");
 const cors = require('cors');
+const path = require('path');
 const fileRoute = require('./src/Routes/fileRoutes');
 const dotenv = require('dotenv');
 const app = express();
@@ -23,6 +24,13 @@ mongoose
 app.use(cors())
 app.use(express.json());
 app.use("/auth", userRoutes);
-app.use("/file", fileRoute);
+
+app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(fileRoute);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
+
 
 app.listen(8000, () => console.log("Running on port 8000"));
