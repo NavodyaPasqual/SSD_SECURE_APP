@@ -20,7 +20,7 @@ const upload = multer({
       if (!file.originalname.match(/\.(jpeg|jpg|png|pdf|doc|docx|xlsx|xls)$/)) {
         return cb(
           new Error(
-            'only upload files with jpg, jpeg, png, pdf, doc, docx, xslx, xls format.'
+            'Only jpg, jpeg, png, pdf, doc, docx, xslx, xls formats are allowed.'
           )
         );
       }

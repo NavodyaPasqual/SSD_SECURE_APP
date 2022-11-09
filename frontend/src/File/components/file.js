@@ -61,6 +61,10 @@ const File = (props) => {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
+          }).then(response => {
+            this.setState({msg: "File successfully uploaded"});;
+          }).catch(err => {
+            this.setState({error: err});
           });
         } else {
           setErrorMsg('Please select a file to upload.');
