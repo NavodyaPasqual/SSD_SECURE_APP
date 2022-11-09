@@ -86,8 +86,7 @@ export default function Register() {
       <FormContainer>
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            <h1>ADD MEMBERS</h1>
           </div>
           <input
             type="text"
@@ -125,10 +124,7 @@ export default function Register() {
             <option value="worker" name="role">Worker</option>
           </select>
         </div>
-          <button type="submit">Create User</button>
-          <span>
-            Already have an account ? <Link to="/login">Login.</Link>
-          </span>
+          <button type="submit">ADD MEMBER</button>
         </form>
       </FormContainer>
       <ToastContainer />
@@ -137,7 +133,7 @@ export default function Register() {
 }
 
 const FormContainer = styled.div`
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
