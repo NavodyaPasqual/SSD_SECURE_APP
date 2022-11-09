@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import axios from "axios";
 import { API_URL } from '../utils/constants';
-
+import "./styles.scss";
 
 const File = (props) => {
   const [file, setFile] = useState(null); // state for storing actual image
@@ -75,6 +75,7 @@ const File = (props) => {
   };
 
   return (
+    <div className="files">
     <React.Fragment>
       <div className="header">
         <h1>File Upload And Download</h1>
@@ -156,6 +157,7 @@ const File = (props) => {
         </Button>
       </Form>
     </React.Fragment>
+    </div>
   );
 };
 

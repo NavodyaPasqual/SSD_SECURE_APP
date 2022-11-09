@@ -1,0 +1,137 @@
+.files {
+  margin: 10px;
+}
+
+.files h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.files h1,
+.main-content {
+  margin-bottom: 20px;
+}
+
+.files .active {
+  font-weight: 600;
+  color: #0e7bf1;
+}
+
+.files .errorMsg {
+  color: #f21e08;
+  background: #fff0f0;
+  padding: 1rem;
+}
+
+.files .header {
+  margin-bottom: 20px;
+
+  nav {
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+      margin: 10px;
+    }
+  }
+}
+
+.files .upload-section {
+  display: flex;
+  height: 200px;
+  margin-bottom: 10px;
+
+  &>div {
+    width: 50%;
+  }
+}
+
+.files .drop-zone {
+  margin-bottom: 10px;
+  padding: 40px 10px;
+  height: inherit;
+  border: 2px dashed #e9ebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.files .image-preview {
+  height: inherit;
+  margin-left: 5%;
+}
+
+.files .preview-image {
+  width: 100%;
+  height: inherit;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.files .preview-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.files .files-container {
+  width: 98%;
+  overflow-x: auto;
+}
+
+.files .files-table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+
+  tr,
+  td,
+  th {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .file-title {
+    width: 20%;
+  }
+
+  .file-description {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .files .upload-section {
+    flex-direction: column;
+
+    &>div {
+      width: 100%;
+    }
+  }
+
+  .files .image-preview {
+    margin-left: 0;
+    height: 300px;
+  }
+
+  .files .upload-section {
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .files h1 {
+    font-size: 25px;
+  }
+
+  .files .drop-zone {
+    width: 100%;
+  }
+}
