@@ -1,14 +1,7 @@
-<<<<<<< HEAD:backend/src/controllers/fileController.js
 const path = require('path');
 const express = require('express');
 const multer = require('multer');
 const File = require('../models/fileModel');
-=======
-const path = require("path");
-const express = require("express");
-const multer = require("multer");
-const File = require("../Models/File");
->>>>>>> 0a5712096a1d11d30fdbbf1a1f846f3a1215cf57:backend/src/Routes/fileRoutes.js
 const Router = express.Router();
 
 const upload = multer({

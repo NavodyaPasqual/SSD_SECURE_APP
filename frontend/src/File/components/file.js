@@ -5,6 +5,7 @@ import Dropzone from "react-dropzone";
 import axios from "axios";
 import { API_URL } from '../utils/constants';
 
+import "./styles/style.css";
 
 const File = (props) => {
   const [file, setFile] = useState(null); // state for storing actual image
