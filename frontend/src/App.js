@@ -7,9 +7,9 @@ import Chat from './Chat/chat'
 import File from './File/components/file'
 import SignUp from './User/components/signup.component'
 import View from './User/components/view';
-import img from './User/img/ex11.png'
-import img2 from './User/img/dmin_1.png'
-import img3 from './User/img/download.jpeg'
+import img from './User/img/ex11.png';
+import img2 from './User/img/dmin_1.png';
+import img3 from './User/img/download.jpeg';
 
 function App() {
 
