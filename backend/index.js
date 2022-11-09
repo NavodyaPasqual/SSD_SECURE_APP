@@ -9,10 +9,6 @@ const app = express();
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const userRoutes = require("./src/Routes/userRoutes");
-const cors = require("cors");
-const path = require("path");
-const fileRoute = require("./src/Routes/fileRoutes");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -39,21 +35,8 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/file", fileRoutes);
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then((_) => console.log("Connected to DB"))
-  .catch((err) => console.error("error", err));
 
 //The above Calles the current MongoDB database
-
-app.use(cors());
-app.use(express.json());
-app.use("/auth", userRoutes);
-
-app.use(fileRoute);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
