@@ -3,9 +3,11 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import axios from "axios";
+import styled from "styled-components";
 import { API_URL } from '../utils/constants';
 
 
+import "./styles/style.css";
 import "./styles.scss";
 
 
@@ -86,7 +88,7 @@ const File = (props) => {
     <React.Fragment>
       <div classname="container">
       <div className="header">
-        <h1>File Upload And Download</h1>
+        <h1>FILE UPLOAD</h1>
         <nav>
           <NavLink activeClassName="active" to="/" exact={true}>
             Home
@@ -96,6 +98,7 @@ const File = (props) => {
           </NavLink>
         </nav>
       </div>
+      <FormContainer>
       <Form className="search-form" onSubmit={handleOnSubmit}>
         {errorMsg && <p className="errorMsg">{errorMsg}</p>}
         <Row>
@@ -164,10 +167,80 @@ const File = (props) => {
           Submit
         </Button>
       </Form>
+      </FormContainer>
       </div>
     </React.Fragment>
     </div>
   );
 };
+
+const FormContainer = styled.div`
+  height: 120vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #131324;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    img {
+      height: 5rem;
+    }
+    h1 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 5rem;
+  }
+  input {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    &:focus {
+      border: 0.1rem solid #997af0;
+      outline: none;
+    }
+  }
+  button {
+    background-color: #4e0eff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #4e0eff;
+    }
+  }
+  span {
+    color: white;
+    text-transform: uppercase;
+    a {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+`;
 
 export default File;
