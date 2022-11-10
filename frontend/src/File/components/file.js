@@ -89,14 +89,14 @@ const File = (props) => {
       <div classname="container">
       <div className="header">
         <h1>FILE UPLOAD</h1>
-        <nav>
+        {/* <nav>
           <NavLink activeClassName="active" to="/" exact={true}>
             Home
           </NavLink>
           <NavLink activeClassName="active" to="/list">
             Files List
           </NavLink>
-        </nav>
+        </nav> */}
       </div>
       <FormContainer>
       <Form className="search-form" onSubmit={handleOnSubmit}>
@@ -154,7 +154,7 @@ const File = (props) => {
               </div>
             ) : (
               <div className="preview-message">
-                <p>Unable to load the preview. Please check whether the file format is correct</p>
+                <p>Unable to load the preview.</p>
               </div>
             )
           ) : (
