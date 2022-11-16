@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Navbar from "./components/NavBar";
 import File from "./File/components/file";
+import FilesList from "./File/components/FilesList";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/file" element={<File />} />
           <Route path="/" element={<Chat />} />
+          <Route path="/list" element={<FilesList/>} />
         </Routes>
       </section>
     </BrowserRouter>
